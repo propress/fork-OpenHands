@@ -6,13 +6,13 @@
 |---|---------|--------|---------|------|
 | 1 | 序言：全书地图 | ch01-preface.md | 项目定位、架构全景图、核心概念词典、代码库地图、极简全流程 | ✅ |
 | 2 | 数据流全景：一条消息的完整旅程 | ch02-data-flow.md | 用户消息→EventStream→Agent→LLM→Action→Runtime→Observation 完整链路，每步数据形态 | ✅ |
-| 3 | 核心循环：动作与观测的世界观 | ch03-action-observation.md | Action/Observation 类型体系、EventStream 机制、AgentController 状态机 | ⏳ |
-| 4 | 大脑：LLM 层与函数调用 | ch04-llm-layer.md | LiteLLM 封装、function calling、重试机制、CodeAct 范式 | ⏳ |
-| 5 | 执行环境：运行时沙箱深解 | ch05-runtime-sandbox.md | Docker/Local/Kubernetes Runtime、action_execution_server、插件系统 | ⏳ |
-| 6 | 记忆管理：Condenser 与上下文窗口 | ch06-memory-condenser.md | ConversationMemory、Condenser 体系、截断策略 | ⏳ |
-| 7 | 微代理：动态知识注入机制 | ch07-microagents.md | KnowledgeMicroagent、RepoMicroagent、触发机制、Prompt 构建 | ⏳ |
-| 8 | 项目演进史：从 OpenDevin 到 OpenHands V1 | ch08-evolution.md | 初创期→V0 成熟→V1 迁移，架构演变与设计决策 | ⏳ |
-| 9 | 端到端追踪：修复一个 Bug 的完整旅程 | ch09-end-to-end.md | 串联全书，追踪"修复 GitHub Issue"场景全流程 | ⏳ |
+| 3 | 核心循环：动作与观测的世界观 | ch03-action-observation.md | Action/Observation 类型体系、EventStream 机制、AgentController 状态机 | ✅ |
+| 4 | 大脑：LLM 层与函数调用 | ch04-llm-layer.md | LiteLLM 封装、function calling、重试机制、CodeAct 范式 | ✅ |
+| 5 | 执行环境：运行时沙箱深解 | ch05-runtime-sandbox.md | Docker/Local/Kubernetes Runtime、action_execution_server、插件系统 | ✅ |
+| 6 | 记忆管理：Condenser 与上下文窗口 | ch06-memory-condenser.md | ConversationMemory、Condenser 体系、截断策略 | ✅ |
+| 7 | 微代理：动态知识注入机制 | ch07-microagents.md | KnowledgeMicroagent、RepoMicroagent、触发机制、Prompt 构建 | ✅ |
+| 8 | 项目演进史：从 OpenDevin 到 OpenHands V1 | ch08-evolution.md | 初创期→V0 成熟→V1 迁移，架构演变与设计决策 | ✅ |
+| 9 | 端到端追踪：修复一个 Bug 的完整旅程 | ch09-end-to-end.md | 串联全书，追踪"修复 GitHub Issue"场景全流程 | ✅ |
 
 ## 章节规划说明
 
@@ -63,15 +63,14 @@
 ## 下次续写指引
 
 ### 从哪里继续
-ch03 — 核心循环：动作与观测的世界观
+**全书已完成！** 所有 9 章均已写作并提交。
 
 ### 交接备忘
-- ch01 和 ch02 已完成并提交
-- V0 代码大量标注 LEGACY，写作时需同时覆盖 V0（核心机制说明）和 V1（现行架构）
-- CodeActAgent 是主要 Agent，step() 方法是核心入口
-- AgentController 的 `_step()` → `agent.step(state)` → LLM → Action → EventStream → Runtime → Observation → EventStream → back to `_step()`
-- EventStream 既是持久化存储又是实时通知总线
+- 全部 9 章完成，涵盖了 OpenHands 的所有核心模块
+- 本书基于 V0 代码为主要参考（完整可读），同时标注了 V1 的对应位置
+- 核心机制：EventStream → AgentController → CodeActAgent → LLM → Action → Runtime → Observation
 
 ### 待验证项
-- V1 App Server 与 Software Agent SDK 的具体交互协议（SDK 为外部 repo，本书专注此 repo）
-- Kubernetes Runtime 的具体实现细节
+- Software Agent SDK（外部仓库）的具体内部实现细节
+- V1 App Server 与 SDK 的完整 API 协议（SDK 为外部 repo）
+- Kubernetes Runtime 的具体实现细节（本仓库中仅有基础骨架）
