@@ -7,7 +7,7 @@
 | 0 | 序章：全书地图 | ch00-overview.md | 项目定位 / 架构全景图 / 核心概念词典 / 代码库地图 / 一次典型交互极简全流程 | ✅ |
 | 1 | 一次对话的完整旅程：数据流全景 | ch01-data-flow.md | 用户输入→LLM推理→沙箱执行→结果返回的完整数据流，每步拆解数据形态变化 | ✅ |
 | 2 | 事件系统：OpenHands 的神经网络 | ch02-event-system.md | Event / Action / Observation / EventStream / 订阅分发 / 序列化持久化 | ✅ |
-| 3 | 控制器：决策中枢 | ch03-controller.md | AgentController 主循环 / 状态机 / 步进逻辑 / 委托机制 / 卡死检测 | ⏳ |
+| 3 | 控制器：决策中枢 | ch03-controller.md | AgentController 主循环 / 状态机 / 步进逻辑 / 委托机制 / 卡死检测 | ✅ |
 | 4 | CodeActAgent：主力智能体 | ch04-codeact-agent.md | step() 流程 / 消息构建 / 工具注册 / 响应解析 / 多动作队列 | ⏳ |
 | 5 | LLM 集成：与大模型对话 | ch05-llm.md | LLM 类 / litellm 适配 / 函数调用转换 / 重试机制 / token 追踪 / 路由 | ⏳ |
 | 6 | 运行时：沙箱执行环境 | ch06-runtime.md | Runtime 抽象 / Docker 实现 / ActionExecutionServer / 容器生命周期 / 文件操作 | ⏳ |
@@ -81,7 +81,7 @@
 ## 下次续写指引
 
 ### 从哪里继续
-从第3章 ch03-controller.md 开始写作。序章、第1章、第2章已完成。
+从第4章 ch04-codeact-agent.md 开始写作。序章至第3章已完成。
 
 ### 交接备忘
 - 项目版本 v1.5.0，处于 V0→V1 迁移期（V0 将于 2026.4 废弃）
