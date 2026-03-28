@@ -11,7 +11,7 @@
 | 4 | CodeActAgent：主力智能体 | ch04-codeact-agent.md | step() 流程 / 消息构建 / 工具注册 / 响应解析 / 多动作队列 | ✅ |
 | 5 | LLM 集成：与大模型对话 | ch05-llm.md | LLM 类 / litellm 适配 / 函数调用转换 / 重试机制 / token 追踪 / 路由 | ✅ |
 | 6 | 运行时：沙箱执行环境 | ch06-runtime.md | Runtime 抽象 / Docker 实现 / ActionExecutionServer / 容器生命周期 / 文件操作 | ✅ |
-| 7 | 记忆与历史管理 | ch07-memory.md | Condenser 体系 / 历史压缩策略 / ConversationMemory / 上下文窗口管理 | ⏳ |
+| 7 | 记忆与历史管理 | ch07-memory.md | Condenser 体系 / 历史压缩策略 / ConversationMemory / 上下文窗口管理 | ✅ |
 | 8 | 服务端与前端：用户界面层 | ch08-server-frontend.md | FastAPI+SocketIO 服务器 / V0 与 V1 架构 / 前端 React 应用 / WebSocket 实时通信 | ⏳ |
 | 9 | 安全体系 | ch09-security.md | ActionSecurityRisk / 确认模式 / SecurityAnalyzer / 秘钥管理 | ⏳ |
 | 10 | 项目演进史 | ch10-evolution.md | 从 2024.3 初始化到 2026.3 的架构演进：基础搭建→核心框架→产品化→企业化 | ⏳ |
@@ -81,7 +81,7 @@
 ## 下次续写指引
 
 ### 从哪里继续
-从第7章 ch07-memory.md 开始写作。序章至第6章已完成。
+从第8章 ch08-server-frontend.md 开始写作。序章至第7章已完成。
 
 ### 交接备忘
 - 项目版本 v1.5.0，处于 V0→V1 迁移期（V0 将于 2026.4 废弃）
