@@ -12,7 +12,7 @@
 | 5 | LLM 集成：与大模型对话 | ch05-llm.md | LLM 类 / litellm 适配 / 函数调用转换 / 重试机制 / token 追踪 / 路由 | ✅ |
 | 6 | 运行时：沙箱执行环境 | ch06-runtime.md | Runtime 抽象 / Docker 实现 / ActionExecutionServer / 容器生命周期 / 文件操作 | ✅ |
 | 7 | 记忆与历史管理 | ch07-memory.md | Condenser 体系 / 历史压缩策略 / ConversationMemory / 上下文窗口管理 | ✅ |
-| 8 | 服务端与前端：用户界面层 | ch08-server-frontend.md | FastAPI+SocketIO 服务器 / V0 与 V1 架构 / 前端 React 应用 / WebSocket 实时通信 | ⏳ |
+| 8 | 服务端与前端：用户界面层 | ch08-server-frontend.md | FastAPI+SocketIO 服务器 / V0 与 V1 架构 / 前端 React 应用 / WebSocket 实时通信 | ✅ |
 | 9 | 安全体系 | ch09-security.md | ActionSecurityRisk / 确认模式 / SecurityAnalyzer / 秘钥管理 | ⏳ |
 | 10 | 项目演进史 | ch10-evolution.md | 从 2024.3 初始化到 2026.3 的架构演进：基础搭建→核心框架→产品化→企业化 | ⏳ |
 | 11 | 端到端追踪：完整场景串联 | ch11-e2e-trace.md | "帮我修一个 bug"全流程追踪，串联全书所有模块 | ⏳ |
@@ -81,15 +81,15 @@
 ## 下次续写指引
 
 ### 从哪里继续
-从第8章 ch08-server-frontend.md 开始写作。序章至第7章已完成。
+从第9章 ch09-security.md 开始写作。序章至第8章已完成。
 
 ### 交接备忘
 - 项目版本 v1.5.0，处于 V0→V1 迁移期（V0 将于 2026.4 废弃）
-- V0 架构：AgentController + EventStream + Runtime（当前主要运行路径）
-- V1 架构：AppServer + SDK + AppConversationService（新推荐路径）
 - 总 commit 约 6370 个，时间跨度 2024.3 - 2026.3
-- 主要 Agent 是 CodeActAgent（版本 2.2），其他 Agent 为辅助角色
-- 核心数据流：User → EventStream → AgentController → Agent.step() → LLM → Actions → EventStream → Runtime → Observations → EventStream → 循环
+- 第9章安全体系需重点研究 SecurityAnalyzer 和确认模式的具体实现
+- 第10章演进史需要阅读 commit 历史（约 6370 个），按里程碑划分阶段
+- 第11章端到端追踪建议选"修复一个 GitHub Issue"作为典型场景
+- 已完成的8章覆盖了核心主干流程，风格和深度已稳定，续写需保持一致
 
 ### 待验证项
 - [ ] V1 AppConversationService 的完整调用路径（与 V0 对比）
